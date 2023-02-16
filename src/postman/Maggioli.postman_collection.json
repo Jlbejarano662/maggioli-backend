@@ -32,7 +32,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/api/companies/7",
+					"raw": "http://localhost:4000/api/companies/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -41,7 +41,7 @@
 					"path": [
 						"api",
 						"companies",
-						"7"
+						"1"
 					]
 				}
 			},
@@ -53,7 +53,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/api/employees/5",
+					"raw": "http://localhost:4000/api/employees/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -62,19 +62,19 @@
 					"path": [
 						"api",
 						"employees",
-						"5"
+						"1"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "http://localhost:4000/api/employees/:idCompany/:id",
+			"name": "http://localhost:4000/api/employees/:id",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:4000/api/employees/5/4",
+					"raw": "http://localhost:4000/api/employees/employee/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -83,8 +83,8 @@
 					"path": [
 						"api",
 						"employees",
-						"5",
-						"4"
+						"employee",
+						"1"
 					]
 				}
 			},
@@ -214,7 +214,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/api/companies/7",
+					"raw": "http://localhost:4000/api/companies/1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -223,7 +223,7 @@
 					"path": [
 						"api",
 						"companies",
-						"7"
+						"1"
 					]
 				}
 			},
