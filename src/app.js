@@ -1,5 +1,7 @@
 import express from "express";
 import morgan from "morgan";
+import cors from "cors";
+
 // Routes
 import companyRoutes from "./routes/company.routes";
 import employeeRoutes from "./routes/employee.routes";
@@ -12,6 +14,7 @@ app.set("port", 4000);
 // Middlewares
 app.use(morgan("dev"));
 app.use(express.json());
+app.use(cors());
 
 // Routes
 app.use("/api/companies", companyRoutes);

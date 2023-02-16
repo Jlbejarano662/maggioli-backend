@@ -4,13 +4,17 @@ import { getConnection } from "../database/database";
 const getEmployees = async (req, res) => {
   try {
     const { idCompany } = req.params;
-    console.log(idCompany);
+
     const connection = await getConnection();
-    const result = await connection.query(
+    const company = await connection.query(
+      "SELECT COMPANY_NAME FROM company WHERE ID_COMPANY = ?",
+      idCompany
+    );
+    const employees = await connection.query(
       "SELECT * FROM employee WHERE FK_ID_COMPANY = ?",
       idCompany
     );
-    res.json(result);
+    res.json({ company, employees });
   } catch (error) {
     res.status(500);
     res.send(error.message);
@@ -58,18 +62,15 @@ const addEmployee = async (req, res) => {
 // get one employee
 const getEmployee = async (req, res) => {
   try {
-    const { idCompany, id } = req.params;
+    const { id } = req.params;
 
     const connection = await getConnection();
-    const company = await connection.query(
-      "SELECT COMPANY_NAME FROM company WHERE ID_COMPANY = ?",
-      idCompany
-    );
     const employee = await connection.query(
       "SELECT * FROM employee WHERE ID_EMPLOYEE = ?",
       id
     );
-    res.json({ company, employee });
+    console.log(employee);
+    res.json(employee);
   } catch (error) {
     res.status(500);
     res.send(error.message);
@@ -80,7 +81,7 @@ const getEmployee = async (req, res) => {
 const deleteEmployee = async (req, res) => {
   try {
     const { id } = await req.body;
-
+    console.log(req.body);
     const connection = await getConnection();
     await connection.query("DELETE FROM employee WHERE ID_EMPLOYEE = ?", id);
     res.json({ message: "Employee deleted" });

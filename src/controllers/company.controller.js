@@ -75,12 +75,12 @@ const deleteCompany = async (req, res) => {
   }
 };
 
-//update onde company
+//update one company
 const updateCompany = async (req, res) => {
   try {
     const { id } = req.params;
     const { companyName, phone, nit, city, address } = req.body;
-
+    console.log(req.body);
     if (
       companyName === undefined ||
       phone === undefined ||

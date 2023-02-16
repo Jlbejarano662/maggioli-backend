@@ -5,7 +5,7 @@ import { methods as employeeController } from "../controllers/employee.controlle
 const router = Router();
 
 router.get("/:idCompany", employeeController.getEmployees);
-router.get("/:idCompany/:id", employeeController.getEmployee);  
+router.get("/employee/:id", employeeController.getEmployee);  
 router.delete("/", employeeController.deleteEmployee);
 router.put("/", employeeController.updateEmployee);
 router.post("/:idCompany", employeeController.addEmployee); 
